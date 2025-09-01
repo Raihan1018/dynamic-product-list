@@ -2,7 +2,7 @@ import React from "react";
 
 const SingleProducts = ({ product, handleAddCart }) => {
   const { id, title } = product;
-  console.log(product);
+  // console.log(product);
   return (
     <div className="bg-indigo-800 p-2 rounded-md flex flex-col">
       <h2>{id}$</h2>
