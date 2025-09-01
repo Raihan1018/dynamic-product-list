@@ -3,7 +3,8 @@ import React from "react";
 const SingleProducts = (product) => {
   console.log(product);
   return (
-    <div className="card bg-base-100 w-96 shadow-sm my-5 border hover:scale-105 transition-all ease-in-out duration-200">
+    <div 
+    className="card bg-base-100 w-96 shadow-sm my-5 border hover:scale-105 transition-all ease-in-out duration-200">
       <figure>
         <img
           src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
