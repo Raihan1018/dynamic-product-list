@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import SingleProducts from "./components/SingleProducts";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    fetch("data.json")
+    fetch("https://jsonplaceholder.typicode.com/albums")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  const handleAddCart = (p) => {
+    console.log(p);
+  };
   return (
-    <div className="p-5 grid-cols-12 flex justify-between">
-      {/* main content */}
-      <div className="grid-cols-6 ">
-        <h2>Total Products: {products.length}</h2>
+    <div className="flex justify-between p-5">
+      <div className="main-content w-[80%] border p-3 grid grid-cols-4 gap-3">
         {products.map((product) => (
-          <SingleProducts key={product.id} product={product} />
+          <SingleProducts handleAddCart={handleAddCart} key={product.id} product={product} />
         ))}
       </div>
-      {/* cart */}
-      <div className="grid-cols-6 bg-red-700">
-        <h3>cart</h3>
+      <div className="cart w-[20%] border p-3">
+        <Cart />
       </div>
     </div>
   );
